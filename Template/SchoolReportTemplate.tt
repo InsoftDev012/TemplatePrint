@@ -1,0 +1,289 @@
+﻿<#@ template language="C#" debug="true" hostspecific="true" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TemplatePrint.Models" #>
+<#@ assembly name="Newtonsoft.Json" #>
+<#@ import namespace="Newtonsoft.Json.Serialization" #>
+<#@ import namespace="Newtonsoft.Json.Linq" #>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+<style>
+.tablefirst, .tablesecond {
+    text-align: center;
+}
+@@media print {
+		body {
+			-webkit-print-color-adjust: exact;
+		}
+	}
+
+.marksheet-box{
+    background-image: url(http://peoplehelp.in/mewaruni/images/marksheet-bg.png);
+    border: 2px solid red;
+    padding: 15px;
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  background-size: contain;
+  page-break-after: always;
+}
+.uni-logo, .uni-add, .txt-cntr{
+  text-align: center;
+}
+.uni-add p {
+    width: ;
+    margin: 10px auto;
+}
+.Studen_Detail {
+    margin: 20px 0;
+}
+.Studen_Detail p {
+    margin-bottom: 0px;
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.32);
+}
+* {
+    border-color: red !important;
+}
+.table-div thead th {
+    border-bottom: 0px !important;
+}
+</style>
+
+  </head>
+  <body onload="window.print()">
+    <#
+    // Iterate over each report in the list of reports
+    foreach (var report in _reports)
+    {
+#>
+
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="marksheet-box">
+					<div class="row">
+						<div class="col-sm-3 txt-cntr"></div>
+						<div class="col-sm-6 uni-logo">
+							<img src="http://peoplehelp.in/mewaruni/images/mewaruniversitylogo.png" alt="uni-logo"/>
+						</div>
+						<div class="col-sm-3 txt-cntr"></div>
+						<div class="col-sm-12 uni-add">
+							<p>Address: NH - 79 Gangrar, Chittorgarh, Rajasthan-312901 <br>(www.mewaruniversity.org)</p>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-4 enrolmentNo txt-cntr">
+							<p><strong>Enrollment No. </strong> ABCD00012345</p>
+						</div>
+						<div class="col-sm-4 streamName  txt-cntr">
+							<h2>RESULT</h2>
+							<h5>Bachelor of Commerce (General)<h5>
+							<h5>Year Examination : May - 19<h5>
+						</div>
+						<div class="col-sm-4">
+						</div>
+					</div>
+					<div class="row Studen_Detail">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-4 offset-sm-2">
+									<p><span><strong>Name of Student :</strong></span><strong> Sunny Sharma</strong></p>
+									<p><strong>Fathers Name :</strong><strong> Vinod Sharma</strong></p>
+									<p><strong>Mothers Name :</strong><strong> Saroj Sharma</strong></p>
+								</div>
+								<div class="col-sm-4 offset-sm-2">
+									<p><strong>Roll No :</strong><strong> 1234567890</strong></p>
+									<p><strong>Year :</strong><strong> 2019</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				
+				<div class="row">
+				<div class="container-fluid">
+				<div class="col-12">
+<div class="table-div">
+<table class="table table-bordered tablefirst">
+  <thead>
+    <tr>
+      <th rowspan="2" style="vertical-align: middle;">Subject Code</th>
+      <th rowspan="2" style="vertical-align: middle;">Subject Name</th>
+      <th colspan="2">Maximum Marks</th>
+      <th rowspan="2" style="vertical-align: middle;">Total</th>
+      <th colspan="2">Marks Obtained</th>
+      <th rowspan="2" style="vertical-align: middle;">Total</th>
+      <th rowspan="2" colspan="3" style="vertical-align: middle;">Result</th>
+    </tr>
+    <tr>
+      <th rowspan="1">Internal</th>
+      <th rowspan="1">External</th>
+      <th rowspan="1">Internal</th>
+      <th rowspan="1">External</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>abc</th>
+      <td style="text-align:left;">Subject Name</td>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+      <td colspan="2">Pass</td>
+    </tr>
+    <tr>
+      <th>def</th>
+      <td style="text-align:left;">Subject Name</td>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+      <td colspan="2">Pass</td>
+    </tr>
+    <tr>
+      <th>ghi</th>
+      <td style="text-align:left;">Subject Name</td>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+      <td colspan="2">Pass</td>
+    </tr>
+    <tr>
+      <th>jkl</th>
+      <td style="text-align:left;">Subject Name</td>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+      <td colspan="2">Pass</td>
+    </tr>
+    <tr>
+      <th>mno</th>
+      <td style="text-align:left;">Subject Name</td>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+      <td colspan="2">Pass</td>
+    </tr>
+    <tr>
+      <th colspan="2" style="text-align: right;">Total</th>
+      <th>200</th>
+      <th>300</th>
+      <th>500</th>
+      <th>100</th>
+      <th>150</th>
+      <th>250</th>
+      <th>Remarks</th>
+      <th>50%</th>
+    </tr>
+  </tbody>
+  
+  
+<table class="table table-bordered tablesecond">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>First Year</th>
+      <th>Second Year</th>
+      <th>Third Year</th>
+      <th>Grand Total</th>
+      <th>Percentage</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Max Marks</th>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>Total Marks</th>
+      <td>40</td>
+      <td>60</td>
+      <td>100</td>
+      <td>20</td>
+      <td>30</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+  
+            </div>
+				</div>
+				</div>
+				
+				
+				
+				</div>
+				<br><br><br><br>
+<div class="row">
+	<div class="col-sm-4 txt-cntr"><p style="height:40px;"></p>
+    <p><strong>Date of Issue :</strong><strong> 11 June 2019</strong></p></div>
+	<div class="col-sm-4 txt-cntr"><p style="height:40px;"></p>
+    <p><strong>University Stamp </strong></p></div>
+	<div class="col-sm-4 txt-cntr"><p><img src="http://peoplehelp.in/mewaruni/images/signature.png" alt="student-signarute" width="100px; height="40px;"/></p><p><strong>Signature of Controller</strong></p></div>
+</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+  
+<# } // End of foreach report #>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
